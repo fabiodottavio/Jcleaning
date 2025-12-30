@@ -1,345 +1,530 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>J Cleaning FD SRL • Pulizie Case Vacanze a Como (e dintorni)</title>
-  <meta name="description" content="Pulizie professionali per case vacanze a Como. Qualità controllata, biancheria a noleggio e piccole manutenzioni. Per proprietari e property manager." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>J Cleaning FD SRL — Pulizie Case Vacanze a Como (Qualità, Controllo, Zero Sorprese)</title>
+  <meta name="description" content="Pulizie professionali per case vacanze a Como. Standard alti, controlli veri, biancheria a noleggio e piccole manutenzioni. Privati e property manager/agenzie." />
 
-  <!-- Tailwind CDN -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pulizie Case Vacanze a Como — J Cleaning FD SRL" />
+  <meta property="og:description" content="Qualità e controllo della proprietà. Pulizie, noleggio biancheria, piccole manutenzioni. Contattaci su WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="it_IT" />
+
+  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            fdDeep: "#002d2b",
-            fdTeal: "#00968f",
+            deep: "#002d2b",
+            aqua: "#00968f",
+            punch: "#ff4d6d",
+            sun: "#f6c453",
+            ice: "#e8fffe",
+            ink: "#071516"
+          },
+          boxShadow: {
+            glow: "0 10px 40px rgba(0,150,143,.22)",
+            glow2: "0 10px 60px rgba(255,77,109,.18)"
+          },
+          keyframes: {
+            floaty: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-10px)" } },
+            pulseSoft: { "0%,100%": { opacity: .9 }, "50%": { opacity: .55 } }
+          },
+          animation: {
+            floaty: "floaty 6s ease-in-out infinite",
+            pulseSoft: "pulseSoft 2.8s ease-in-out infinite"
           }
         }
       }
     }
   </script>
 
-  <!-- Open Graph (facoltativo) -->
-  <meta property="og:title" content="Pulizie Case Vacanze a Como • J Cleaning FD SRL" />
-  <meta property="og:description" content="Qualità controllata. Biancheria a noleggio. Piccole manutenzioni. Contattaci su WhatsApp." />
-  <meta property="og:type" content="website" />
+  <!-- AOS (scroll animations) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Swiper (testimonials slider) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css"/>
+  <script defer src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Icons -->
+  <script defer src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* piccoli miglioramenti UI */
+    /* Smooth scroll + selection */
     html { scroll-behavior: smooth; }
-    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); }
-    .shadow-soft { box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
-    .ring-teal { box-shadow: 0 0 0 3px rgba(0,150,143,0.25); }
+    ::selection { background: rgba(0,150,143,.25); }
+    /* Subtle background grid */
+    .bg-grid {
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(0,150,143,.18) 1px, transparent 0);
+      background-size: 22px 22px;
+    }
   </style>
 </head>
 
-<body class="bg-fdDeep text-white antialiased">
-  <!-- Top scarcity banner -->
-  <div class="sticky top-0 z-50 w-full bg-fdTeal text-fdDeep">
-    <div class="mx-auto max-w-6xl px-4 py-2 text-sm md:text-base flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-      <div class="font-semibold">
-        Alta stagione in arrivo: prendiamo <span class="underline">solo un numero limitato di case</span> per mantenere standard sopra la media.
+<body class="bg-ink text-white antialiased">
+
+  <!-- TOP SCARCITY BANNER -->
+  <div class="sticky top-0 z-50">
+    <div class="bg-gradient-to-r from-deep via-aqua to-punch shadow-glow">
+      <div class="mx-auto max-w-7xl px-4 py-2 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+        <div class="text-sm md:text-base font-semibold">
+          🔥 Alta stagione in arrivo: <span class="underline decoration-white/40">posti limitati</span> per mantenere standard sopra la media.
+          <span class="opacity-90">Blocca la tua proprietà adesso.</span>
+        </div>
+        <div class="flex items-center gap-2 text-xs md:text-sm">
+          <span class="inline-flex items-center gap-1 rounded-full bg-black/20 px-3 py-1">
+            <span class="h-2 w-2 rounded-full bg-white animate-pulse"></span>
+            Disponibilità in aggiornamento
+          </span>
+          <a href="#contatto" class="rounded-full bg-white text-ink font-bold px-4 py-1.5 hover:scale-[1.02] transition">
+            Richiedi disponibilità
+          </a>
+        </div>
       </div>
-      <a href="#contatto" class="inline-flex items-center justify-center rounded-full bg-fdDeep text-white px-4 py-1.5 font-semibold hover:opacity-90">
-        Blocca il tuo slot
-      </a>
     </div>
   </div>
 
-  <!-- Header -->
-  <header class="mx-auto max-w-6xl px-4 pt-10 pb-6">
-    <nav class="flex items-center justify-between gap-4">
-      <a href="#" class="flex items-center gap-3">
-        <!-- Ideogramma (metti il file nella root del repo) -->
-        <img src="base_icon_transparent_background.png" alt="Icona J Cleaning" class="h-10 w-10 md:h-12 md:w-12" />
+  <!-- FLOATING WHATSAPP CTA -->
+  <a
+    href="https://wa.me/393780910646?text=Ciao%20J%20Cleaning%20FD!%20Vorrei%20un%20preventivo%20per%20pulizie%20case%20vacanze%20a%20Como.%20Ho%20__%20immobili%20e%20mi%20serve%20da%20__%20."
+    target="_blank" rel="noopener"
+    class="fixed bottom-5 right-5 z-50 group"
+    aria-label="Contattaci su WhatsApp"
+  >
+    <div class="flex items-center gap-3 rounded-full bg-aqua px-4 py-3 shadow-glow hover:shadow-glow2 transition-all hover:-translate-y-1">
+      <div class="grid place-items-center h-10 w-10 rounded-full bg-white/15">
+        <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+      </div>
+      <div class="hidden sm:block">
+        <div class="font-extrabold leading-tight">WhatsApp</div>
+        <div class="text-xs opacity-90 -mt-0.5">Risposta rapida</div>
+      </div>
+      <span class="absolute -top-2 -left-2 h-4 w-4 rounded-full bg-sun blur-[0.2px] animate-pulse"></span>
+    </div>
+  </a>
+
+  <!-- NAV -->
+  <header class="relative">
+    <div class="mx-auto max-w-7xl px-4 py-5 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="./assets/base_icon_transparent_background.png" alt="J Cleaning FD" class="h-10 w-10 animate-floaty" />
         <div class="leading-tight">
-          <div class="text-lg md:text-xl font-extrabold tracking-tight">J Cleaning <span class="text-fdTeal">FD</span></div>
-          <div class="text-xs md:text-sm text-white/70">Pulizie Case Vacanze • Como</div>
+          <div class="font-black tracking-tight text-lg">J Cleaning <span class="text-aqua">FD</span></div>
+          <div class="text-xs opacity-70">Pulizie • Biancheria • Micro-manutenzioni</div>
         </div>
       </a>
 
-      <div class="hidden md:flex items-center gap-6 text-sm text-white/80">
-        <a href="#servizi" class="hover:text-white">Servizi</a>
-        <a href="#proprietari" class="hover:text-white">Per Proprietari</a>
-        <a href="#business" class="hover:text-white">Business</a>
-        <a href="#garanzia" class="hover:text-white">Garanzia</a>
-        <a href="#faq" class="hover:text-white">FAQ</a>
-      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a class="opacity-80 hover:opacity-100" href="#servizi">Servizi</a>
+        <a class="opacity-80 hover:opacity-100" href="#privati">Privati</a>
+        <a class="opacity-80 hover:opacity-100" href="#business">Business</a>
+        <a class="opacity-80 hover:opacity-100" href="#garanzia">Garanzia</a>
+        <a class="opacity-80 hover:opacity-100" href="#recensioni">Recensioni</a>
+        <a class="opacity-80 hover:opacity-100" href="#faq">FAQ</a>
+      </nav>
 
-      <a
-        href="https://wa.me/393780910646?text=Ciao!%20Vorrei%20info%20su%20pulizie%20case%20vacanze%20a%20Como."
-        class="inline-flex items-center gap-2 rounded-full bg-white text-fdDeep px-4 py-2 font-bold hover:opacity-90 ring-2 ring-white/10"
-        aria-label="Contattaci su WhatsApp"
-      >
-        <span class="text-base">WhatsApp</span>
-        <span class="text-fdTeal">→</span>
-      </a>
-    </nav>
+      <div class="flex items-center gap-3">
+        <a href="#contatto" class="hidden sm:inline-flex rounded-full bg-white/10 px-4 py-2 font-semibold hover:bg-white/15 transition">
+          Preventivo rapido
+        </a>
+        <a
+          href="https://wa.me/393780910646?text=Ciao%20J%20Cleaning%20FD!%20Vorrei%20capire%20se%20avete%20posti%20per%20la%20mia%20propriet%C3%A0%20a%20Como."
+          target="_blank" rel="noopener"
+          class="inline-flex rounded-full bg-aqua px-4 py-2 font-black text-ink hover:scale-[1.02] transition shadow-glow"
+        >
+          Scrivici ora
+        </a>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="mx-auto max-w-6xl px-4 pb-14">
-    <div class="grid lg:grid-cols-2 gap-8 items-center">
-      <div>
-        <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/80">
-          <span class="h-2 w-2 rounded-full bg-fdTeal"></span>
-          Como & dintorni • Biancheria • Piccole manutenzioni
-        </p>
+  <!-- HERO -->
+  <main id="top" class="relative overflow-hidden">
+    <!-- background blobs -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-aqua/25 blur-3xl"></div>
+      <div class="absolute top-32 -right-28 h-[30rem] w-[30rem] rounded-full bg-punch/20 blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-sun/15 blur-3xl"></div>
+      <div class="absolute inset-0 bg-grid opacity-30"></div>
+      <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/50 to-transparent"></div>
+    </div>
 
-        <h1 class="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight">
-          Pulizie per case vacanze a Como.
-          <span class="text-fdTeal">Fatte bene</span>. Punto.
+    <section class="mx-auto max-w-7xl px-4 pt-10 pb-14 md:pt-16 md:pb-20 grid lg:grid-cols-2 gap-10 items-center">
+      <div data-aos="fade-right">
+        <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold">
+          <span class="h-2 w-2 rounded-full bg-aqua animate-pulse"></span>
+          Como • Case vacanze • Standard alti, sempre
+        </div>
+
+        <h1 class="mt-5 text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
+          Pulizie che <span class="text-aqua">non ti fanno perdere tempo</span>.
+          <span class="block mt-2 opacity-90">E che non ti fanno perdere recensioni.</span>
         </h1>
 
-        <p class="mt-4 text-lg text-white/80 leading-relaxed">
-          Sappiamo quanto <span class="font-semibold text-white">costano davvero</span> le pulizie: tempo, imprevisti, recensioni rovinate e ospiti che scrivono “non era come mi aspettavo”.
-          Noi tagliamo il rumore: <span class="font-semibold text-white">qualità controllata</span>, proprietà in ordine, e zero scuse.
+        <p class="mt-5 text-lg text-white/80 leading-relaxed">
+          Noi non ci formalizziamo: <span class="font-semibold text-white">arriviamo, puliamo, controlliamo</span>.
+          Sappiamo quanto costa una pulizia fatta bene e quanto costa una pulizia fatta male (spoiler: di più).
         </p>
 
-        <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://wa.me/393780910646?text=Ciao!%20Vorrei%20un%20preventivo%20per%20pulizie%20case%20vacanze%20a%20Como.%20Ho%20___%20immobili."
-            class="inline-flex items-center justify-center rounded-2xl bg-fdTeal text-fdDeep px-6 py-3 font-extrabold hover:opacity-90 shadow-soft"
-          >
-            Chiedi preventivo su WhatsApp
-          </a>
-          <a
-            href="#servizi"
-            class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 font-bold hover:bg-white/15 ring-1 ring-white/15"
-          >
-            Vedi come lavoriamo
-          </a>
-        </div>
-
-        <div class="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3 text-sm text-white/70">
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-extrabold text-white">Controllo</div>
-            <div>Checklist + foto + standard</div>
-          </div>
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-extrabold text-white">Biancheria</div>
-            <div>Noleggio & gestione</div>
-          </div>
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-extrabold text-white">Manutenzioni</div>
-            <div>Piccoli fix rapidi</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hero card -->
-      <div class="rounded-3xl glass ring-1 ring-white/10 p-6 md:p-8 shadow-soft">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <h2 class="text-2xl font-extrabold">Preventivo rapido</h2>
-            <p class="mt-1 text-white/70">In 60 secondi capiamo se possiamo aiutarti.</p>
-          </div>
-          <span class="rounded-full bg-fdTeal text-fdDeep px-3 py-1 text-xs font-extrabold">Como</span>
-        </div>
-
-        <div class="mt-6 space-y-3 text-white/85">
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-bold">1) Quanti immobili?</div>
-            <div class="text-sm text-white/70">1 • 2-5 • 6-15 • 15+</div>
-          </div>
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-bold">2) Serve biancheria?</div>
-            <div class="text-sm text-white/70">Noleggio, lavaggio, rotazione set</div>
-          </div>
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-bold">3) Vuoi anche manutenzioni?</div>
-            <div class="text-sm text-white/70">Piccoli interventi “salva-recensione”</div>
-          </div>
-        </div>
-
-        <a
-          id="contatto"
-          href="https://wa.me/393780910646?text=Ciao!%20Ecco%20le%20info%20per%20un%20preventivo:%0A-%20Zona:%20Como%20/%20____%0A-%20N.%20immobili:%20____%0A-%20Biancheria:%20S%C3%AC/No%0A-%20Manutenzioni:%20S%C3%AC/No%0A-%20Note:%20____"
-          class="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-white text-fdDeep px-6 py-3 font-extrabold hover:opacity-90 ring-2 ring-white/10"
-        >
-          Scrivici su WhatsApp (378 091 0646)
-        </a>
-
-        <p class="mt-3 text-xs text-white/60">
-          Niente call infinite. Ci dici 4 cose, ti diciamo subito se ci stai dentro con qualità e budget.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="servizi" class="border-t border-white/10">
-    <div class="mx-auto max-w-6xl px-4 py-14">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-extrabold">Cosa facciamo (davvero)</h2>
-          <p class="mt-2 text-white/70 max-w-2xl">
-            Non vendiamo “pulizie”. Vendiamo <span class="text-white font-semibold">controllo</span> e <span class="text-white font-semibold">qualità costante</span>.
-            Perché una recensione negativa costa più di una pulizia fatta bene.
-          </p>
-        </div>
-        <a href="https://wa.me/393780910646?text=Ciao!%20Vorrei%20capire%20disponibilit%C3%A0%20e%20tariffe%20per%20pulizie%20a%20Como."
-           class="inline-flex items-center justify-center rounded-2xl bg-fdTeal text-fdDeep px-5 py-3 font-extrabold hover:opacity-90">
-          Verifica disponibilità
-        </a>
-      </div>
-
-      <div class="mt-10 grid md:grid-cols-3 gap-5">
-        <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
-          <h3 class="text-xl font-extrabold">Pulizie + controllo</h3>
-          <p class="mt-2 text-white/70">
-            Standard chiari, checklist, e controllo qualità. Se qualcosa non torna, lo sistemiamo. Fine.
-          </p>
-          <ul class="mt-4 space-y-2 text-sm text-white/75">
-            <li>• Bagni, cucina, camere, vetri (quando previsto)</li>
-            <li>• Refill consumabili (se forniti)</li>
-            <li>• Report post-intervento</li>
-          </ul>
-        </div>
-
-        <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
-          <h3 class="text-xl font-extrabold">Noleggio biancheria</h3>
-          <p class="mt-2 text-white/70">
-            Set pronti, rotazione, gestione scorte. Tu non impazzisci con lenzuola mancanti la sera prima.
-          </p>
-          <ul class="mt-4 space-y-2 text-sm text-white/75">
-            <li>• Lenzuola + asciugamani + tappetini</li>
-            <li>• Set “extra” per emergenze</li>
-            <li>• Tracciamento semplice (no caos)</li>
-          </ul>
-        </div>
-
-        <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
-          <h3 class="text-xl font-extrabold">Piccole manutenzioni</h3>
-          <p class="mt-2 text-white/70">
-            Interventi rapidi per evitare disastri: lampadine, maniglie, silicone, micro-fix, ecc.
-          </p>
-          <ul class="mt-4 space-y-2 text-sm text-white/75">
-            <li>• “Fix in giornata” quando possibile</li>
-            <li>• Foto prima/dopo</li>
-            <li>• Preventivo se serve qualcosa di grande</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Split: Owners vs Business -->
-  <section class="border-t border-white/10">
-    <div class="mx-auto max-w-6xl px-4 py-14 grid lg:grid-cols-2 gap-6">
-      <!-- Owners -->
-      <div id="proprietari" class="rounded-3xl bg-white/5 p-7 ring-1 ring-white/10">
-        <div class="flex items-center justify-between gap-3">
-          <h2 class="text-2xl font-extrabold">Se hai 1 casa (o poche)</h2>
-          <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-extrabold text-white/80">Proprietari</span>
-        </div>
-
-        <p class="mt-3 text-white/75">
-          Vuoi una cosa semplice: <span class="text-white font-semibold">entrare e trovarla perfetta</span>.
-          Senza dover controllare tu ogni dettaglio.
-        </p>
-
-        <div class="mt-5 space-y-3">
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-bold">✅ Pacchetto “Zero pensieri”</div>
-            <div class="text-sm text-white/70">Pulizia + controllo qualità + report</div>
-          </div>
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-bold">🧺 Biancheria (se vuoi)</div>
-            <div class="text-sm text-white/70">Noleggio e rotazione set, senza stress</div>
-          </div>
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-bold">🔧 Mini manutenzioni</div>
-            <div class="text-sm text-white/70">Piccole cose che salvano l’esperienza ospite</div>
-          </div>
-        </div>
-
-        <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://wa.me/393780910646?text=Ciao!%20Sono%20un%20proprietario%20con%20____%20immobile/i%20a%20Como.%20Vorrei%20un%20preventivo%20pulizie%20%2B%20(opzionale)%20biancheria."
-            class="inline-flex items-center justify-center rounded-2xl bg-fdTeal text-fdDeep px-6 py-3 font-extrabold hover:opacity-90"
-          >
-            Sono un proprietario → WhatsApp
-          </a>
-          <a href="#garanzia" class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 font-bold hover:bg-white/15 ring-1 ring-white/15">
-            Vedi la garanzia
-          </a>
-        </div>
-      </div>
-
-      <!-- Business -->
-      <div id="business" class="rounded-3xl bg-white/5 p-7 ring-1 ring-white/10">
-        <div class="flex items-center justify-between gap-3">
-          <h2 class="text-2xl font-extrabold">Se gestisci più immobili</h2>
-          <span class="rounded-full bg-fdTeal text-fdDeep px-3 py-1 text-xs font-extrabold">Business</span>
-        </div>
-
-        <p class="mt-3 text-white/75">
-          Sei un property manager o un’agenzia: qui servono <span class="text-white font-semibold">processi</span>, non “brave persone”.
-          Ti diamo stabilità operativa, controllo e scalabilità.
-        </p>
-
-        <div class="mt-5 space-y-3">
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-bold">📋 Standard & checklist condivise</div>
-            <div class="text-sm text-white/70">Allineamento su cosa significa “pulito” (per davvero)</div>
-          </div>
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-bold">📸 Controllo qualità con evidenze</div>
-            <div class="text-sm text-white/70">Foto, report, tracciabilità: meno discussioni, più risultati</div>
-          </div>
-          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-            <div class="font-bold">🧺 Biancheria + 🔧 manutenzioni “fast”</div>
-            <div class="text-sm text-white/70">Un solo partner per gestire il caos del cambio ospite</div>
-          </div>
-        </div>
-
-        <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://wa.me/393780910646?text=Ciao!%20Gestisco%20____%20immobili%20a%20Como%20e%20cerco%20un%20partner%20pulizie%20%2B%20biancheria%20%2B%20manutenzioni.%20Possiamo%20sentirci%3F"
-            class="inline-flex items-center justify-center rounded-2xl bg-white text-fdDeep px-6 py-3 font-extrabold hover:opacity-90 ring-2 ring-white/10"
-          >
-            Sono un PM/Agenzia → WhatsApp
-          </a>
-          <a href="#faq" class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 font-bold hover:bg-white/15 ring-1 ring-white/15">
-            Leggi le FAQ
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Guarantee -->
-  <section id="garanzia" class="border-t border-white/10">
-    <div class="mx-auto max-w-6xl px-4 py-14">
-      <div class="rounded-3xl bg-gradient-to-br from-white/10 to-white/5 p-8 ring-1 ring-white/10">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
-            <h2 class="text-3xl font-extrabold">La nostra garanzia (senza teatro)</h2>
-            <p class="mt-2 text-white/75 max-w-3xl">
-              Se dopo una pulizia trovi qualcosa di <span class="text-white font-semibold">non conforme allo standard concordato</span>,
-              interveniamo rapidamente per sistemare. Perché il controllo della proprietà non è un “optional”.
-            </p>
-            <ul class="mt-4 space-y-2 text-sm text-white/75">
-              <li>• Standard condiviso prima di partire</li>
-              <li>• Report post-servizio (quando richiesto)</li>
-              <li>• Priorità alta in alta stagione: meno rischi, più continuità</li>
-            </ul>
-          </div>
-
-          <div class="rounded-2xl bg-fdDeep/60 p-6 ring-1 ring-white/10 md:min-w-[320px]">
-            <div class="text-sm text-white/70">Vuoi vedere disponibilità e pricing?</div>
-            <a
-              href="https://wa.me/393780910646?text=Ciao!%20Vorrei%20attivare%20il%20servizio%20pulizie%20a%20Como.%20Mi%20mandi%20disponibilit%C3%A0%20e%20modalit%C3%A0%3F"
-              class="mt-3 inline-flex w-full items-center justify-center rounded-2xl bg-fdTeal text-fdDeep px-6 py-3 font-extrabold hover:opacity-90"
-            >
-              WhatsApp adesso
-            </a>
-            <div class="mt-3 text-xs text-white/60">
-              Risposte rapide. Se non possiamo garantire qualità, te lo diciamo subito.
+        <div class="mt-6 grid sm:grid-cols-2 gap-3">
+          <div class="rounded-2xl bg-white/10 p-4 border border-white/10">
+            <div class="font-extrabold flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-5 h-5 text-aqua"></i> Controllo proprietà
             </div>
+            <div class="text-sm opacity-80 mt-1">Checklist, foto, standard replicabili.</div>
+          </div>
+          <div class="rounded-2xl bg-white/10 p-4 border border-white/10">
+            <div class="font-extrabold flex items-center gap-2">
+              <i data-lucide="sparkles" class="w-5 h-5 text-sun"></i> Qualità vera
+            </div>
+            <div class="text-sm opacity-80 mt-1">Dettagli + rapidità + affidabilità.</div>
+          </div>
+        </div>
+
+        <div class="mt-7 flex flex-col sm:flex-row gap-3">
+          <a href="#contatto" class="inline-flex justify-center rounded-2xl bg-aqua text-ink px-6 py-3 font-black shadow-glow hover:scale-[1.02] transition">
+            Voglio un preventivo (1 min)
+          </a>
+          <a href="#servizi" class="inline-flex justify-center rounded-2xl bg-white/10 px-6 py-3 font-bold hover:bg-white/15 transition">
+            Guarda come lavoriamo
+          </a>
+        </div>
+
+        <!-- quick proof -->
+        <div class="mt-8 flex flex-wrap items-center gap-3 text-sm opacity-80">
+          <span class="inline-flex items-center gap-2 rounded-full bg-black/30 px-4 py-2 border border-white/10">
+            <i data-lucide="map-pin" class="w-4 h-4 text-aqua"></i> Operativi su Como e dintorni
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-black/30 px-4 py-2 border border-white/10">
+            <i data-lucide="droplets" class="w-4 h-4 text-sun"></i> Biancheria a noleggio disponibile
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-black/30 px-4 py-2 border border-white/10">
+            <i data-lucide="wrench" class="w-4 h-4 text-punch"></i> Micro-manutenzioni extra
+          </span>
+        </div>
+      </div>
+
+      <!-- HERO IMAGES -->
+      <div class="relative" data-aos="fade-left">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-3xl overflow-hidden border border-white/10 shadow-glow">
+            <img
+              class="h-56 md:h-64 w-full object-cover hover:scale-[1.03] transition duration-700"
+              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80"
+              alt="Pulizie professionali"
+              loading="lazy"
+            />
+          </div>
+          <div class="rounded-3xl overflow-hidden border border-white/10 shadow-glow2 mt-8">
+            <img
+              class="h-56 md:h-64 w-full object-cover hover:scale-[1.03] transition duration-700"
+              src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80"
+              alt="Letti perfetti e biancheria"
+              loading="lazy"
+            />
+          </div>
+          <div class="rounded-3xl overflow-hidden border border-white/10 shadow-glow2">
+            <img
+              class="h-56 md:h-64 w-full object-cover hover:scale-[1.03] transition duration-700"
+              src="https://images.unsplash.com/photo-1560448075-bb485b067938?auto=format&fit=crop&w=1200&q=80"
+              alt="Casa vacanze pronta"
+              loading="lazy"
+            />
+          </div>
+          <div class="rounded-3xl overflow-hidden border border-white/10 shadow-glow mt-8">
+            <img
+              class="h-56 md:h-64 w-full object-cover hover:scale-[1.03] transition duration-700"
+              src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80"
+              alt="Dettagli bagno"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- floating badge -->
+        <div class="absolute -bottom-6 left-6 right-6 rounded-3xl bg-gradient-to-r from-white/12 to-white/6 border border-white/10 p-4 backdrop-blur shadow-glow animate-floaty">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <div class="font-black">Standard “guest-ready”</div>
+              <div class="text-sm opacity-80">Check finale + foto + note operative</div>
+            </div>
+            <div class="text-right">
+              <div class="text-xs opacity-70">Tempo risposta</div>
+              <div class="font-black text-aqua">rapido</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SERVICES OVERVIEW -->
+  <section id="servizi" class="mx-auto max-w-7xl px-4 py-16">
+    <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight">Quello che facciamo (e lo facciamo bene)</h2>
+      <p class="mt-3 text-white/75 text-lg">
+        Pulizie serie per case vacanze. Con un obiettivo: <span class="text-white font-semibold">zero problemi, zero ansia</span>.
+      </p>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="rounded-3xl bg-white/8 border border-white/10 p-6 hover:-translate-y-1 transition shadow-glow" data-aos="zoom-in">
+        <div class="h-12 w-12 rounded-2xl bg-aqua/20 grid place-items-center mb-4">
+          <i data-lucide="sparkles" class="w-6 h-6 text-aqua"></i>
+        </div>
+        <div class="font-extrabold text-xl">Pulizia turnover</div>
+        <p class="mt-2 text-white/75">Check-out → check-in. Veloci, ordinati, standardizzati. Niente “speriamo bene”.</p>
+        <ul class="mt-4 text-sm text-white/75 space-y-2">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-aqua mt-0.5"></i> Checklist stanza per stanza</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-aqua mt-0.5"></i> Foto post-intervento</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-aqua mt-0.5"></i> Refill base su richiesta</li>
+        </ul>
+      </div>
+
+      <div class="rounded-3xl bg-white/8 border border-white/10 p-6 hover:-translate-y-1 transition shadow-glow2" data-aos="zoom-in" data-aos-delay="100">
+        <div class="h-12 w-12 rounded-2xl bg-sun/20 grid place-items-center mb-4">
+          <i data-lucide="droplets" class="w-6 h-6 text-sun"></i>
+        </div>
+        <div class="font-extrabold text-xl">Noleggio biancheria</div>
+        <p class="mt-2 text-white/75">Lenzuola e asciugamani pronti, puliti, consegnati. Tu pensi alle prenotazioni, noi al resto.</p>
+        <ul class="mt-4 text-sm text-white/75 space-y-2">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-sun mt-0.5"></i> Kit per ospite / rotazione</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-sun mt-0.5"></i> Tracciamento stock (su richiesta)</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-sun mt-0.5"></i> Standard hotellerie</li>
+        </ul>
+      </div>
+
+      <div class="rounded-3xl bg-white/8 border border-white/10 p-6 hover:-translate-y-1 transition shadow-glow" data-aos="zoom-in" data-aos-delay="200">
+        <div class="h-12 w-12 rounded-2xl bg-punch/20 grid place-items-center mb-4">
+          <i data-lucide="wrench" class="w-6 h-6 text-punch"></i>
+        </div>
+        <div class="font-extrabold text-xl">Piccole manutenzioni</div>
+        <p class="mt-2 text-white/75">Non chiami 4 persone per una sciocchezza. Piccoli fix rapidi come extra.</p>
+        <ul class="mt-4 text-sm text-white/75 space-y-2">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-punch mt-0.5"></i> Sostituzioni minori / regolazioni</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-punch mt-0.5"></i> Segnalazioni proattive</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-punch mt-0.5"></i> Foto “prima/dopo”</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPLIT: PRIVATE vs BUSINESS -->
+  <section class="mx-auto max-w-7xl px-4 pb-16">
+    <div class="grid lg:grid-cols-2 gap-6">
+
+      <!-- PRIVATE -->
+      <div id="privati" class="rounded-[2rem] bg-gradient-to-br from-white/10 to-white/5 border border-white/10 p-7 overflow-hidden relative" data-aos="fade-up">
+        <div class="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-aqua/25 blur-2xl"></div>
+
+        <div class="inline-flex items-center gap-2 rounded-full bg-black/25 px-4 py-2 text-sm font-bold border border-white/10">
+          <i data-lucide="home" class="w-4 h-4 text-aqua"></i> Per proprietari singoli
+        </div>
+
+        <h3 class="mt-4 text-2xl md:text-3xl font-black">Hai 1 casa? Ti serve una cosa sola: affidabilità.</h3>
+        <p class="mt-3 text-white/80">
+          Se gestisci da solo, il problema non è “trovare qualcuno”. Il problema è trovare qualcuno che <span class="font-semibold text-white">non ti lasci in difficoltà</span>.
+        </p>
+
+        <div class="mt-5 grid sm:grid-cols-2 gap-3">
+          <div class="rounded-2xl bg-black/25 border border-white/10 p-4">
+            <div class="font-extrabold flex items-center gap-2"><i data-lucide="camera" class="w-5 h-5 text-aqua"></i> Report foto</div>
+            <div class="text-sm opacity-80 mt-1">Così sai sempre com’è messa la casa.</div>
+          </div>
+          <div class="rounded-2xl bg-black/25 border border-white/10 p-4">
+            <div class="font-extrabold flex items-center gap-2"><i data-lucide="clipboard-check" class="w-5 h-5 text-sun"></i> Checklist</div>
+            <div class="text-sm opacity-80 mt-1">Niente “pulito a occhio”.</div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#contatto" class="inline-flex justify-center rounded-2xl bg-aqua text-ink px-5 py-3 font-black hover:scale-[1.02] transition shadow-glow">
+            Voglio un piano per 1 casa
+          </a>
+          <a target="_blank" rel="noopener"
+             href="https://wa.me/393780910646?text=Ciao!%20Ho%201%20casa%20vacanze%20a%20Como.%20Mi%20fate%20un%20preventivo%20turnover%20+%20biancheria%3F"
+             class="inline-flex justify-center rounded-2xl bg-white/10 px-5 py-3 font-bold hover:bg-white/15 transition">
+            WhatsApp diretto
+          </a>
+        </div>
+      </div>
+
+      <!-- BUSINESS -->
+      <div id="business" class="rounded-[2rem] bg-gradient-to-br from-punch/20 via-white/6 to-aqua/20 border border-white/10 p-7 overflow-hidden relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-sun/20 blur-2xl"></div>
+
+        <div class="inline-flex items-center gap-2 rounded-full bg-black/25 px-4 py-2 text-sm font-bold border border-white/10">
+          <i data-lucide="building-2" class="w-4 h-4 text-sun"></i> Sezione Business
+        </div>
+
+        <h3 class="mt-4 text-2xl md:text-3xl font-black">Gestisci più immobili? Qui si parla di processo.</h3>
+        <p class="mt-3 text-white/80">
+          Per property manager e agenzie: serve un partner che ragiona a <span class="font-semibold text-white">SLA, standard e scalabilità</span>.
+        </p>
+
+        <div class="mt-5 grid sm:grid-cols-2 gap-3">
+          <div class="rounded-2xl bg-black/25 border border-white/10 p-4">
+            <div class="font-extrabold flex items-center gap-2"><i data-lucide="layers" class="w-5 h-5 text-sun"></i> Standard replicabili</div>
+            <div class="text-sm opacity-80 mt-1">Stesso risultato, ogni volta.</div>
+          </div>
+          <div class="rounded-2xl bg-black/25 border border-white/10 p-4">
+            <div class="font-extrabold flex items-center gap-2"><i data-lucide="timer" class="w-5 h-5 text-aqua"></i> Turnover rapidi</div>
+            <div class="text-sm opacity-80 mt-1">Gestione finestre check-in/out.</div>
+          </div>
+          <div class="rounded-2xl bg-black/25 border border-white/10 p-4">
+            <div class="font-extrabold flex items-center gap-2"><i data-lucide="route" class="w-5 h-5 text-punch"></i> Pianificazione</div>
+            <div class="text-sm opacity-80 mt-1">Ottimizziamo giri e tempi.</div>
+          </div>
+          <div class="rounded-2xl bg-black/25 border border-white/10 p-4">
+            <div class="font-extrabold flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5 text-sun"></i> Report & note</div>
+            <div class="text-sm opacity-80 mt-1">Anomalie, scorte, interventi.</div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#contatto" class="inline-flex justify-center rounded-2xl bg-sun text-ink px-5 py-3 font-black hover:scale-[1.02] transition shadow-glow2">
+            Voglio una proposta Business
+          </a>
+          <a target="_blank" rel="noopener"
+             href="https://wa.me/393780910646?text=Ciao!%20Gestisco%20pi%C3%B9%20immobili%20a%20Como.%20Mi%20serve%20una%20proposta%20Business%20pulizie%20+%20biancheria%20+%20micro-manutenzioni."
+             class="inline-flex justify-center rounded-2xl bg-white/10 px-5 py-3 font-bold hover:bg-white/15 transition">
+            WhatsApp Business
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section id="garanzia" class="mx-auto max-w-7xl px-4 pb-16">
+    <div class="rounded-[2.2rem] bg-gradient-to-r from-deep via-aqua to-deep border border-white/10 p-8 md:p-10 overflow-hidden relative shadow-glow" data-aos="fade-up">
+      <div class="absolute inset-0 opacity-20 bg-grid"></div>
+      <div class="relative grid md:grid-cols-3 gap-6 items-center">
+        <div class="md:col-span-2">
+          <div class="inline-flex items-center gap-2 rounded-full bg-black/25 px-4 py-2 text-sm font-bold border border-white/10">
+            <i data-lucide="badge-check" class="w-4 h-4"></i> Garanzia Qualità
+          </div>
+          <h3 class="mt-4 text-3xl md:text-4xl font-black tracking-tight">Se c’è un problema, lo sistemiamo. Punto.</h3>
+          <p class="mt-3 text-white/85 text-lg">
+            Non scarichiamo colpe. Se qualcosa non è all’altezza, <span class="font-semibold">interveniamo rapidamente</span> (secondo disponibilità e condizioni concordate).
+          </p>
+          <div class="mt-5 flex flex-wrap gap-2 text-sm">
+            <span class="rounded-full bg-black/25 px-4 py-2 border border-white/10">Checklist + foto</span>
+            <span class="rounded-full bg-black/25 px-4 py-2 border border-white/10">Standard chiari</span>
+            <span class="rounded-full bg-black/25 px-4 py-2 border border-white/10">Comunicazione diretta</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a href="#contatto" class="inline-flex justify-center rounded-2xl bg-white text-ink px-6 py-3 font-black hover:scale-[1.02] transition shadow-glow">
+            Richiedi disponibilità
+          </a>
+          <a target="_blank" rel="noopener"
+             href="https://wa.me/393780910646?text=Ciao!%20Mi%20interessa%20la%20vostra%20garanzia%20qualit%C3%A0.%20Come%20funziona%20per%20il%20mio%20immobile%3F"
+             class="inline-flex justify-center rounded-2xl bg-black/25 px-6 py-3 font-bold hover:bg-black/35 transition border border-white/10">
+            Chiedi su WhatsApp
+          </a>
+          <p class="text-xs text-white/75">
+            *I dettagli operativi della garanzia vengono concordati in fase di onboarding (dipende da distanza, finestre orarie e tipologia immobile).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="recensioni" class="mx-auto max-w-7xl px-4 pb-16">
+    <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight">Recensioni (vere, senza poesia inutile)</h2>
+      <p class="mt-3 text-white/75 text-lg">Proprietari e aziende vogliono la stessa cosa: <span class="text-white font-semibold">affidabilità</span>.</p>
+    </div>
+
+    <div class="mt-10 rounded-[2rem] border border-white/10 bg-white/5 p-6 md:p-8" data-aos="fade-up">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- slide 1 -->
+          <div class="swiper-slide">
+            <div class="rounded-3xl bg-black/25 border border-white/10 p-6">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="font-black text-lg">“Da quando li uso, meno problemi e più tempo.”</div>
+                  <div class="text-sm text-white/70 mt-1">Proprietario • 1 appartamento • Como</div>
+                </div>
+                <div class="flex gap-1 text-sun">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+              <p class="mt-4 text-white/80">
+                “Checklist e foto sono la svolta. Non devo più chiedere ‘com’è venuta?’. Si vede e basta.”
+              </p>
+            </div>
+          </div>
+
+          <!-- slide 2 -->
+          <div class="swiper-slide">
+            <div class="rounded-3xl bg-black/25 border border-white/10 p-6">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="font-black text-lg">“Standard costanti su più immobili.”</div>
+                  <div class="text-sm text-white/70 mt-1">Property Manager • 12 unità</div>
+                </div>
+                <div class="flex gap-1 text-sun">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+              <p class="mt-4 text-white/80">
+                “Non è solo pulizia: è processo. E quando c’è un imprevisto, rispondono subito.”
+              </p>
+            </div>
+          </div>
+
+          <!-- slide 3 -->
+          <div class="swiper-slide">
+            <div class="rounded-3xl bg-black/25 border border-white/10 p-6">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="font-black text-lg">“Biancheria: finalmente ordine.”</div>
+                  <div class="text-sm text-white/70 mt-1">Agenzia • Lago di Como</div>
+                </div>
+                <div class="flex gap-1 text-sun">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+              <p class="mt-4 text-white/80">
+                “Kit sempre pronti, niente caos. E segnalano subito se manca qualcosa o c’è un danno.”
+              </p>
+            </div>
+          </div>
+
+          <!-- slide 4 -->
+          <div class="swiper-slide">
+            <div class="rounded-3xl bg-black/25 border border-white/10 p-6">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="font-black text-lg">“Micro-manutenzioni che salvano giornate.”</div>
+                  <div class="text-sm text-white/70 mt-1">Host • 2 unità</div>
+                </div>
+                <div class="flex gap-1 text-sun">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+              <p class="mt-4 text-white/80">
+                “Una cosa piccola diventa enorme se arriva l’ospite. Loro sistemano/avvisano prima. Fine.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          <div class="swiper-pagination"></div>
+          <div class="flex gap-2">
+            <button class="swiper-button-prev !static !w-10 !h-10 rounded-full bg-white/10 border border-white/10 hover:bg-white/15 transition"></button>
+            <button class="swiper-button-next !static !w-10 !h-10 rounded-full bg-white/10 border border-white/10 hover:bg-white/15 transition"></button>
           </div>
         </div>
       </div>
@@ -347,90 +532,199 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="border-t border-white/10">
-    <div class="mx-auto max-w-6xl px-4 py-14">
-      <h2 class="text-3xl md:text-4xl font-extrabold">FAQ (domande vere)</h2>
-      <p class="mt-2 text-white/70 max-w-2xl">Niente fuffa: le cose che contano quando gestisci ospiti e proprietà.</p>
+  <section id="faq" class="mx-auto max-w-7xl px-4 pb-20">
+    <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight">FAQ (domande che ci fanno sempre)</h2>
+      <p class="mt-3 text-white/75 text-lg">Risposte rapide, niente fumo.</p>
+    </div>
 
-      <div class="mt-8 grid md:grid-cols-2 gap-5">
-        <details class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
-          <summary class="cursor-pointer font-extrabold">“Quanto costa?”</summary>
-          <p class="mt-3 text-white/75">
-            Dipende da metratura, turnover, biancheria e standard richiesti. Ma sì: sappiamo che il prezzo deve stare in piedi.
-            Scrivici su WhatsApp con 3 info e ti rispondiamo rapido.
-          </p>
-        </details>
+    <div class="mt-10 grid lg:grid-cols-2 gap-5">
+      <!-- FAQ item -->
+      <details class="group rounded-3xl bg-white/6 border border-white/10 p-6" data-aos="fade-up">
+        <summary class="list-none cursor-pointer flex items-center justify-between gap-4">
+          <div class="font-extrabold text-lg">Quanto costa una pulizia turnover?</div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-aqua transition group-open:rotate-180"></i>
+        </summary>
+        <p class="mt-3 text-white/80">
+          Dipende da metri, letti, bagni, livello richiesto e finestra oraria. Quello che ti promettiamo è questo:
+          <span class="font-semibold text-white">prezzi chiari</span> e standard coerenti. Se vuoi, ti facciamo una proposta in 1 minuto su WhatsApp.
+        </p>
+      </details>
 
-        <details class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
-          <summary class="cursor-pointer font-extrabold">“Fate anche biancheria?”</summary>
-          <p class="mt-3 text-white/75">
-            Sì, noleggio e gestione set (rotazione inclusa). Obiettivo: niente “manca un asciugamano” alle 22:30.
-          </p>
-        </details>
+      <details class="group rounded-3xl bg-white/6 border border-white/10 p-6" data-aos="fade-up" data-aos-delay="50">
+        <summary class="list-none cursor-pointer flex items-center justify-between gap-4">
+          <div class="font-extrabold text-lg">Fate anche il cambio biancheria?</div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-aqua transition group-open:rotate-180"></i>
+        </summary>
+        <p class="mt-3 text-white/80">
+          Sì. Possiamo gestire <span class="font-semibold text-white">noleggio + consegna + ritiro</span> e organizzare kit per ospite/rotazione.
+        </p>
+      </details>
 
-        <details class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
-          <summary class="cursor-pointer font-extrabold">“E se c’è un problema urgente?”</summary>
-          <p class="mt-3 text-white/75">
-            Per questo esistono le piccole manutenzioni. Se serve qualcosa di più grosso, te lo segnaliamo con foto e proposta.
-          </p>
-        </details>
+      <details class="group rounded-3xl bg-white/6 border border-white/10 p-6" data-aos="fade-up">
+        <summary class="list-none cursor-pointer flex items-center justify-between gap-4">
+          <div class="font-extrabold text-lg">Come garantite qualità e controllo?</div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-aqua transition group-open:rotate-180"></i>
+        </summary>
+        <p class="mt-3 text-white/80">
+          Checklist + foto + segnalazioni. E soprattutto: <span class="font-semibold text-white">posti limitati</span>.
+          Non prendiamo tutto, perché non ci interessa “fare volume” se poi cala lo standard.
+        </p>
+      </details>
 
-        <details class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
-          <summary class="cursor-pointer font-extrabold">“Prendete tutte le case?”</summary>
-          <p class="mt-3 text-white/75">
-            No. Se arriviamo al limite operativo, ci fermiamo. Preferiamo “poche fatte bene” che tante fatte così così.
-          </p>
-        </details>
-      </div>
+      <details class="group rounded-3xl bg-white/6 border border-white/10 p-6" data-aos="fade-up" data-aos-delay="50">
+        <summary class="list-none cursor-pointer flex items-center justify-between gap-4">
+          <div class="font-extrabold text-lg">Lavorate con agenzie / property manager?</div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-aqua transition group-open:rotate-180"></i>
+        </summary>
+        <p class="mt-3 text-white/80">
+          Sì: abbiamo una sezione Business per chi gestisce più unità. Lì conta il processo: turni, pianificazione, standard, report.
+        </p>
+      </details>
+
+      <details class="group rounded-3xl bg-white/6 border border-white/10 p-6" data-aos="fade-up">
+        <summary class="list-none cursor-pointer flex items-center justify-between gap-4">
+          <div class="font-extrabold text-lg">Cosa intendete per “piccole manutenzioni”?</div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-aqua transition group-open:rotate-180"></i>
+        </summary>
+        <p class="mt-3 text-white/80">
+          Fix rapidi: sostituzioni minori, regolazioni, piccole sistemazioni. Se serve un intervento grande, te lo diciamo subito
+          e ti proponiamo la strada migliore (con prove/foto).
+        </p>
+      </details>
+
+      <details class="group rounded-3xl bg-white/6 border border-white/10 p-6" data-aos="fade-up" data-aos-delay="50">
+        <summary class="list-none cursor-pointer flex items-center justify-between gap-4">
+          <div class="font-extrabold text-lg">In quanto rispondete?</div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-aqua transition group-open:rotate-180"></i>
+        </summary>
+        <p class="mt-3 text-white/80">
+          WhatsApp è il canale più veloce. In alta stagione, prima ti muovi, meglio è (posti limitati).
+        </p>
+      </details>
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="border-t border-white/10">
-    <div class="mx-auto max-w-6xl px-4 py-14">
-      <div class="rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+  <!-- CONTACT -->
+  <section id="contatto" class="mx-auto max-w-7xl px-4 pb-20">
+    <div class="rounded-[2.2rem] bg-gradient-to-br from-white/10 to-white/5 border border-white/10 p-8 md:p-10 shadow-glow" data-aos="fade-up">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
         <div>
-          <h2 class="text-3xl font-extrabold">Parliamo chiaro: vuoi qualità o vuoi problemi?</h2>
-          <p class="mt-2 text-white/70 max-w-2xl">
-            Se vuoi un partner che va dritto al punto, controlla e mantiene lo standard, scrivici.
+          <h2 class="text-3xl md:text-4xl font-black tracking-tight">Ok, parliamo della tua proprietà.</h2>
+          <p class="mt-3 text-white/80 text-lg">
+            2 domande e ti diciamo subito se abbiamo spazio e che soluzione ha senso (privato o business).
+          </p>
+
+          <div class="mt-6 space-y-3 text-sm text-white/75">
+            <div class="flex gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-aqua mt-0.5"></i> Sede: Viale Sinigaglia 5, Como</div>
+            <div class="flex gap-2"><i data-lucide="file-badge" class="w-4 h-4 text-sun mt-0.5"></i> P.IVA: 04105680120</div>
+            <div class="flex gap-2"><i data-lucide="building" class="w-4 h-4 text-punch mt-0.5"></i> J Cleaning FD SRL</div>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a
+              target="_blank" rel="noopener"
+              href="https://wa.me/393780910646?text=Ciao%20J%20Cleaning%20FD!%20Ecco%20le%20info%3A%20(1)%20n.%20immobili%3D__%20(2)%20zona%3D__%20(3)%20m2%3D__%20(4)%20turnover%20settimanali%3D__%20(5)%20serve%20biancheria%3F%20S/N%20(6)%20serve%20manutenzioni%3F%20S/N"
+              class="inline-flex justify-center rounded-2xl bg-aqua text-ink px-6 py-3 font-black hover:scale-[1.02] transition shadow-glow"
+            >
+              Contatta su WhatsApp (con template)
+            </a>
+            <a href="#privati" class="inline-flex justify-center rounded-2xl bg-white/10 px-6 py-3 font-bold hover:bg-white/15 transition">
+              Sono un privato
+            </a>
+          </div>
+
+          <p class="mt-3 text-xs text-white/60">
+            Nota: in alta stagione teniamo posti limitati per qualità. Se gestisci più unità, scrivi “BUSINESS” nel messaggio.
           </p>
         </div>
-        <a
-          href="https://wa.me/393780910646?text=Ciao!%20Vorrei%20iniziare%20con%20J%20Cleaning%20FD.%20La%20mia%20situazione%20%C3%A8:%20____"
-          class="inline-flex items-center justify-center rounded-2xl bg-fdTeal text-fdDeep px-7 py-3 font-extrabold hover:opacity-90"
-        >
-          Contattaci su WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/10">
-    <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-white/70">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <img src="base_icon_transparent_background.png" alt="Icona J Cleaning" class="h-8 w-8" />
-          <div>
-            <div class="font-extrabold text-white">J Cleaning FD SRL</div>
-            <div>Viale Sinigaglia 5, Como • P.IVA 04105680120</div>
+        <div class="rounded-3xl bg-black/25 border border-white/10 p-6">
+          <div class="font-black text-xl">Messaggio veloce (copiaincolla)</div>
+          <div class="mt-4 rounded-2xl bg-black/35 border border-white/10 p-4 text-sm text-white/80">
+            Ciao J Cleaning FD!<br/>
+            Ho __ immobili a Como/zona __.<br/>
+            Mq: __ • Camere: __ • Bagni: __<br/>
+            Turnover medi: __/settimana<br/>
+            Biancheria: S/N • Micro-manutenzioni: S/N<br/>
+            Finestra check-in/out: __<br/>
+          </div>
+
+          <div class="mt-5 grid sm:grid-cols-2 gap-3">
+            <a target="_blank" rel="noopener"
+               href="https://wa.me/393780910646?text=Ciao%20J%20Cleaning%20FD!%20Sono%20un%20PRIVATO%20e%20ho%20__%20immobile/i%20a%20Como.%20Posso%20avere%20un%20preventivo%3F"
+               class="rounded-2xl bg-white/10 px-4 py-3 font-extrabold hover:bg-white/15 transition text-center">
+              Privato
+            </a>
+            <a target="_blank" rel="noopener"
+               href="https://wa.me/393780910646?text=Ciao%20J%20Cleaning%20FD!%20Sono%20BUSINESS%20(property%20manager/agenzia)%20e%20gestisco%20__%20unit%C3%A0.%20Mi%20serve%20una%20proposta%20con%20standard%20e%20processo."
+               class="rounded-2xl bg-sun text-ink px-4 py-3 font-extrabold hover:scale-[1.02] transition text-center shadow-glow2">
+              Business
+            </a>
+          </div>
+
+          <div class="mt-6 rounded-2xl border border-white/10 bg-gradient-to-r from-punch/15 to-aqua/15 p-4">
+            <div class="font-extrabold">Tip “anti-casino”</div>
+            <div class="text-sm text-white/75 mt-1">
+              Se mi scrivi: <span class="font-semibold text-white">mq + n. letti + n. bagni + finestra check</span>, ti rispondiamo più veloce e più preciso.
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="flex flex-col md:items-end gap-2">
-          <a class="text-white font-semibold hover:opacity-90"
-             href="https://wa.me/393780910646?text=Ciao!%20Info%20pulizie%20case%20vacanze%20Como."
-          >
-            WhatsApp: 378 091 0646
-          </a>
-          <div class="text-xs text-white/50">© <span id="year"></span> J Cleaning FD SRL • Tutti i diritti riservati</div>
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-black/20">
+    <div class="mx-auto max-w-7xl px-4 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="./assets/base_icon_transparent_background.png" alt="J Cleaning FD" class="h-9 w-9" />
+        <div>
+          <div class="font-black">J Cleaning FD SRL</div>
+          <div class="text-sm text-white/60">Viale Sinigaglia 5, Como • P.IVA 04105680120</div>
         </div>
+      </div>
+
+      <div class="text-sm text-white/60">
+        © <span id="year"></span> • Pulizie case vacanze a Como • Biancheria • Micro-manutenzioni
       </div>
     </div>
   </footer>
 
+  <!-- INIT SCRIPTS -->
   <script>
+    // year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // AOS
+    window.addEventListener("load", () => {
+      AOS.init({
+        duration: 700,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 60
+      });
+    });
+
+    // lucide icons
+    window.addEventListener("load", () => {
+      if (window.lucide) lucide.createIcons();
+    });
+
+    // Swiper
+    window.addEventListener("load", () => {
+      new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 18,
+        autoplay: { delay: 4200, disableOnInteraction: false },
+        pagination: { el: ".swiper-pagination", clickable: true },
+        navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+        breakpoints: {
+          0: { slidesPerView: 1 },
+          900: { slidesPerView: 2 }
+        }
+      });
+    });
   </script>
 </body>
 </html>
