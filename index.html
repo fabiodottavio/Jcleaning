@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J Cleaning FD SRL • Pulizie Case Vacanze a Como (e dintorni)</title>
+  <meta name="description" content="Pulizie professionali per case vacanze a Como. Qualità controllata, biancheria a noleggio e piccole manutenzioni. Per proprietari e property manager." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fdDeep: "#002d2b",
+            fdTeal: "#00968f",
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Open Graph (facoltativo) -->
+  <meta property="og:title" content="Pulizie Case Vacanze a Como • J Cleaning FD SRL" />
+  <meta property="og:description" content="Qualità controllata. Biancheria a noleggio. Piccole manutenzioni. Contattaci su WhatsApp." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    /* piccoli miglioramenti UI */
+    html { scroll-behavior: smooth; }
+    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); }
+    .shadow-soft { box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
+    .ring-teal { box-shadow: 0 0 0 3px rgba(0,150,143,0.25); }
+  </style>
+</head>
+
+<body class="bg-fdDeep text-white antialiased">
+  <!-- Top scarcity banner -->
+  <div class="sticky top-0 z-50 w-full bg-fdTeal text-fdDeep">
+    <div class="mx-auto max-w-6xl px-4 py-2 text-sm md:text-base flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+      <div class="font-semibold">
+        Alta stagione in arrivo: prendiamo <span class="underline">solo un numero limitato di case</span> per mantenere standard sopra la media.
+      </div>
+      <a href="#contatto" class="inline-flex items-center justify-center rounded-full bg-fdDeep text-white px-4 py-1.5 font-semibold hover:opacity-90">
+        Blocca il tuo slot
+      </a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="mx-auto max-w-6xl px-4 pt-10 pb-6">
+    <nav class="flex items-center justify-between gap-4">
+      <a href="#" class="flex items-center gap-3">
+        <!-- Ideogramma (metti il file nella root del repo) -->
+        <img src="base_icon_transparent_background.png" alt="Icona J Cleaning" class="h-10 w-10 md:h-12 md:w-12" />
+        <div class="leading-tight">
+          <div class="text-lg md:text-xl font-extrabold tracking-tight">J Cleaning <span class="text-fdTeal">FD</span></div>
+          <div class="text-xs md:text-sm text-white/70">Pulizie Case Vacanze • Como</div>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-sm text-white/80">
+        <a href="#servizi" class="hover:text-white">Servizi</a>
+        <a href="#proprietari" class="hover:text-white">Per Proprietari</a>
+        <a href="#business" class="hover:text-white">Business</a>
+        <a href="#garanzia" class="hover:text-white">Garanzia</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+      </div>
+
+      <a
+        href="https://wa.me/393780910646?text=Ciao!%20Vorrei%20info%20su%20pulizie%20case%20vacanze%20a%20Como."
+        class="inline-flex items-center gap-2 rounded-full bg-white text-fdDeep px-4 py-2 font-bold hover:opacity-90 ring-2 ring-white/10"
+        aria-label="Contattaci su WhatsApp"
+      >
+        <span class="text-base">WhatsApp</span>
+        <span class="text-fdTeal">→</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="mx-auto max-w-6xl px-4 pb-14">
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/80">
+          <span class="h-2 w-2 rounded-full bg-fdTeal"></span>
+          Como & dintorni • Biancheria • Piccole manutenzioni
+        </p>
+
+        <h1 class="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight">
+          Pulizie per case vacanze a Como.
+          <span class="text-fdTeal">Fatte bene</span>. Punto.
+        </h1>
+
+        <p class="mt-4 text-lg text-white/80 leading-relaxed">
+          Sappiamo quanto <span class="font-semibold text-white">costano davvero</span> le pulizie: tempo, imprevisti, recensioni rovinate e ospiti che scrivono “non era come mi aspettavo”.
+          Noi tagliamo il rumore: <span class="font-semibold text-white">qualità controllata</span>, proprietà in ordine, e zero scuse.
+        </p>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://wa.me/393780910646?text=Ciao!%20Vorrei%20un%20preventivo%20per%20pulizie%20case%20vacanze%20a%20Como.%20Ho%20___%20immobili."
+            class="inline-flex items-center justify-center rounded-2xl bg-fdTeal text-fdDeep px-6 py-3 font-extrabold hover:opacity-90 shadow-soft"
+          >
+            Chiedi preventivo su WhatsApp
+          </a>
+          <a
+            href="#servizi"
+            class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 font-bold hover:bg-white/15 ring-1 ring-white/15"
+          >
+            Vedi come lavoriamo
+          </a>
+        </div>
+
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3 text-sm text-white/70">
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-extrabold text-white">Controllo</div>
+            <div>Checklist + foto + standard</div>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-extrabold text-white">Biancheria</div>
+            <div>Noleggio & gestione</div>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-extrabold text-white">Manutenzioni</div>
+            <div>Piccoli fix rapidi</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero card -->
+      <div class="rounded-3xl glass ring-1 ring-white/10 p-6 md:p-8 shadow-soft">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-extrabold">Preventivo rapido</h2>
+            <p class="mt-1 text-white/70">In 60 secondi capiamo se possiamo aiutarti.</p>
+          </div>
+          <span class="rounded-full bg-fdTeal text-fdDeep px-3 py-1 text-xs font-extrabold">Como</span>
+        </div>
+
+        <div class="mt-6 space-y-3 text-white/85">
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-bold">1) Quanti immobili?</div>
+            <div class="text-sm text-white/70">1 • 2-5 • 6-15 • 15+</div>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-bold">2) Serve biancheria?</div>
+            <div class="text-sm text-white/70">Noleggio, lavaggio, rotazione set</div>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-bold">3) Vuoi anche manutenzioni?</div>
+            <div class="text-sm text-white/70">Piccoli interventi “salva-recensione”</div>
+          </div>
+        </div>
+
+        <a
+          id="contatto"
+          href="https://wa.me/393780910646?text=Ciao!%20Ecco%20le%20info%20per%20un%20preventivo:%0A-%20Zona:%20Como%20/%20____%0A-%20N.%20immobili:%20____%0A-%20Biancheria:%20S%C3%AC/No%0A-%20Manutenzioni:%20S%C3%AC/No%0A-%20Note:%20____"
+          class="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-white text-fdDeep px-6 py-3 font-extrabold hover:opacity-90 ring-2 ring-white/10"
+        >
+          Scrivici su WhatsApp (378 091 0646)
+        </a>
+
+        <p class="mt-3 text-xs text-white/60">
+          Niente call infinite. Ci dici 4 cose, ti diciamo subito se ci stai dentro con qualità e budget.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="servizi" class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Cosa facciamo (davvero)</h2>
+          <p class="mt-2 text-white/70 max-w-2xl">
+            Non vendiamo “pulizie”. Vendiamo <span class="text-white font-semibold">controllo</span> e <span class="text-white font-semibold">qualità costante</span>.
+            Perché una recensione negativa costa più di una pulizia fatta bene.
+          </p>
+        </div>
+        <a href="https://wa.me/393780910646?text=Ciao!%20Vorrei%20capire%20disponibilit%C3%A0%20e%20tariffe%20per%20pulizie%20a%20Como."
+           class="inline-flex items-center justify-center rounded-2xl bg-fdTeal text-fdDeep px-5 py-3 font-extrabold hover:opacity-90">
+          Verifica disponibilità
+        </a>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-5">
+        <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
+          <h3 class="text-xl font-extrabold">Pulizie + controllo</h3>
+          <p class="mt-2 text-white/70">
+            Standard chiari, checklist, e controllo qualità. Se qualcosa non torna, lo sistemiamo. Fine.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-white/75">
+            <li>• Bagni, cucina, camere, vetri (quando previsto)</li>
+            <li>• Refill consumabili (se forniti)</li>
+            <li>• Report post-intervento</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
+          <h3 class="text-xl font-extrabold">Noleggio biancheria</h3>
+          <p class="mt-2 text-white/70">
+            Set pronti, rotazione, gestione scorte. Tu non impazzisci con lenzuola mancanti la sera prima.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-white/75">
+            <li>• Lenzuola + asciugamani + tappetini</li>
+            <li>• Set “extra” per emergenze</li>
+            <li>• Tracciamento semplice (no caos)</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
+          <h3 class="text-xl font-extrabold">Piccole manutenzioni</h3>
+          <p class="mt-2 text-white/70">
+            Interventi rapidi per evitare disastri: lampadine, maniglie, silicone, micro-fix, ecc.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-white/75">
+            <li>• “Fix in giornata” quando possibile</li>
+            <li>• Foto prima/dopo</li>
+            <li>• Preventivo se serve qualcosa di grande</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Split: Owners vs Business -->
+  <section class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-14 grid lg:grid-cols-2 gap-6">
+      <!-- Owners -->
+      <div id="proprietari" class="rounded-3xl bg-white/5 p-7 ring-1 ring-white/10">
+        <div class="flex items-center justify-between gap-3">
+          <h2 class="text-2xl font-extrabold">Se hai 1 casa (o poche)</h2>
+          <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-extrabold text-white/80">Proprietari</span>
+        </div>
+
+        <p class="mt-3 text-white/75">
+          Vuoi una cosa semplice: <span class="text-white font-semibold">entrare e trovarla perfetta</span>.
+          Senza dover controllare tu ogni dettaglio.
+        </p>
+
+        <div class="mt-5 space-y-3">
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-bold">✅ Pacchetto “Zero pensieri”</div>
+            <div class="text-sm text-white/70">Pulizia + controllo qualità + report</div>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-bold">🧺 Biancheria (se vuoi)</div>
+            <div class="text-sm text-white/70">Noleggio e rotazione set, senza stress</div>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-bold">🔧 Mini manutenzioni</div>
+            <div class="text-sm text-white/70">Piccole cose che salvano l’esperienza ospite</div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://wa.me/393780910646?text=Ciao!%20Sono%20un%20proprietario%20con%20____%20immobile/i%20a%20Como.%20Vorrei%20un%20preventivo%20pulizie%20%2B%20(opzionale)%20biancheria."
+            class="inline-flex items-center justify-center rounded-2xl bg-fdTeal text-fdDeep px-6 py-3 font-extrabold hover:opacity-90"
+          >
+            Sono un proprietario → WhatsApp
+          </a>
+          <a href="#garanzia" class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 font-bold hover:bg-white/15 ring-1 ring-white/15">
+            Vedi la garanzia
+          </a>
+        </div>
+      </div>
+
+      <!-- Business -->
+      <div id="business" class="rounded-3xl bg-white/5 p-7 ring-1 ring-white/10">
+        <div class="flex items-center justify-between gap-3">
+          <h2 class="text-2xl font-extrabold">Se gestisci più immobili</h2>
+          <span class="rounded-full bg-fdTeal text-fdDeep px-3 py-1 text-xs font-extrabold">Business</span>
+        </div>
+
+        <p class="mt-3 text-white/75">
+          Sei un property manager o un’agenzia: qui servono <span class="text-white font-semibold">processi</span>, non “brave persone”.
+          Ti diamo stabilità operativa, controllo e scalabilità.
+        </p>
+
+        <div class="mt-5 space-y-3">
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-bold">📋 Standard & checklist condivise</div>
+            <div class="text-sm text-white/70">Allineamento su cosa significa “pulito” (per davvero)</div>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-bold">📸 Controllo qualità con evidenze</div>
+            <div class="text-sm text-white/70">Foto, report, tracciabilità: meno discussioni, più risultati</div>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <div class="font-bold">🧺 Biancheria + 🔧 manutenzioni “fast”</div>
+            <div class="text-sm text-white/70">Un solo partner per gestire il caos del cambio ospite</div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://wa.me/393780910646?text=Ciao!%20Gestisco%20____%20immobili%20a%20Como%20e%20cerco%20un%20partner%20pulizie%20%2B%20biancheria%20%2B%20manutenzioni.%20Possiamo%20sentirci%3F"
+            class="inline-flex items-center justify-center rounded-2xl bg-white text-fdDeep px-6 py-3 font-extrabold hover:opacity-90 ring-2 ring-white/10"
+          >
+            Sono un PM/Agenzia → WhatsApp
+          </a>
+          <a href="#faq" class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 font-bold hover:bg-white/15 ring-1 ring-white/15">
+            Leggi le FAQ
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantee -->
+  <section id="garanzia" class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="rounded-3xl bg-gradient-to-br from-white/10 to-white/5 p-8 ring-1 ring-white/10">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 class="text-3xl font-extrabold">La nostra garanzia (senza teatro)</h2>
+            <p class="mt-2 text-white/75 max-w-3xl">
+              Se dopo una pulizia trovi qualcosa di <span class="text-white font-semibold">non conforme allo standard concordato</span>,
+              interveniamo rapidamente per sistemare. Perché il controllo della proprietà non è un “optional”.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-white/75">
+              <li>• Standard condiviso prima di partire</li>
+              <li>• Report post-servizio (quando richiesto)</li>
+              <li>• Priorità alta in alta stagione: meno rischi, più continuità</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-fdDeep/60 p-6 ring-1 ring-white/10 md:min-w-[320px]">
+            <div class="text-sm text-white/70">Vuoi vedere disponibilità e pricing?</div>
+            <a
+              href="https://wa.me/393780910646?text=Ciao!%20Vorrei%20attivare%20il%20servizio%20pulizie%20a%20Como.%20Mi%20mandi%20disponibilit%C3%A0%20e%20modalit%C3%A0%3F"
+              class="mt-3 inline-flex w-full items-center justify-center rounded-2xl bg-fdTeal text-fdDeep px-6 py-3 font-extrabold hover:opacity-90"
+            >
+              WhatsApp adesso
+            </a>
+            <div class="mt-3 text-xs text-white/60">
+              Risposte rapide. Se non possiamo garantire qualità, te lo diciamo subito.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <h2 class="text-3xl md:text-4xl font-extrabold">FAQ (domande vere)</h2>
+      <p class="mt-2 text-white/70 max-w-2xl">Niente fuffa: le cose che contano quando gestisci ospiti e proprietà.</p>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-5">
+        <details class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
+          <summary class="cursor-pointer font-extrabold">“Quanto costa?”</summary>
+          <p class="mt-3 text-white/75">
+            Dipende da metratura, turnover, biancheria e standard richiesti. Ma sì: sappiamo che il prezzo deve stare in piedi.
+            Scrivici su WhatsApp con 3 info e ti rispondiamo rapido.
+          </p>
+        </details>
+
+        <details class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
+          <summary class="cursor-pointer font-extrabold">“Fate anche biancheria?”</summary>
+          <p class="mt-3 text-white/75">
+            Sì, noleggio e gestione set (rotazione inclusa). Obiettivo: niente “manca un asciugamano” alle 22:30.
+          </p>
+        </details>
+
+        <details class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
+          <summary class="cursor-pointer font-extrabold">“E se c’è un problema urgente?”</summary>
+          <p class="mt-3 text-white/75">
+            Per questo esistono le piccole manutenzioni. Se serve qualcosa di più grosso, te lo segnaliamo con foto e proposta.
+          </p>
+        </details>
+
+        <details class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
+          <summary class="cursor-pointer font-extrabold">“Prendete tutte le case?”</summary>
+          <p class="mt-3 text-white/75">
+            No. Se arriviamo al limite operativo, ci fermiamo. Preferiamo “poche fatte bene” che tante fatte così così.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-extrabold">Parliamo chiaro: vuoi qualità o vuoi problemi?</h2>
+          <p class="mt-2 text-white/70 max-w-2xl">
+            Se vuoi un partner che va dritto al punto, controlla e mantiene lo standard, scrivici.
+          </p>
+        </div>
+        <a
+          href="https://wa.me/393780910646?text=Ciao!%20Vorrei%20iniziare%20con%20J%20Cleaning%20FD.%20La%20mia%20situazione%20%C3%A8:%20____"
+          class="inline-flex items-center justify-center rounded-2xl bg-fdTeal text-fdDeep px-7 py-3 font-extrabold hover:opacity-90"
+        >
+          Contattaci su WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-white/70">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="base_icon_transparent_background.png" alt="Icona J Cleaning" class="h-8 w-8" />
+          <div>
+            <div class="font-extrabold text-white">J Cleaning FD SRL</div>
+            <div>Viale Sinigaglia 5, Como • P.IVA 04105680120</div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:items-end gap-2">
+          <a class="text-white font-semibold hover:opacity-90"
+             href="https://wa.me/393780910646?text=Ciao!%20Info%20pulizie%20case%20vacanze%20Como."
+          >
+            WhatsApp: 378 091 0646
+          </a>
+          <div class="text-xs text-white/50">© <span id="year"></span> J Cleaning FD SRL • Tutti i diritti riservati</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
